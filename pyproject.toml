@@ -1,0 +1,18 @@
+[project]
+name = "ai-gift"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "supabase>=2.16.0",
+    "langchain>=0.2.0",
+    "langchain-community>=0.2.0",
+    "d>=0.2.2",
+    "langchain-google-genai>=2.0.10",
+    "google-generativeai>=0.8.5",
+    "python-dotenv>=1.1.1",
+    "fastapi>=0.116.1",
+    "uvicorn>=0.35.0",
+    "python-multipart>=0.0.20",
+]
