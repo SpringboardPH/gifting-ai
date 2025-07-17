@@ -8,6 +8,9 @@ from langchain_community.vectorstores import SupabaseVectorStore
 from langchain_core.messages import SystemMessage, HumanMessage
 from fastapi.middleware.cors import CORSMiddleware
 
+# FastAPI setup
+app = FastAPI()
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["https://speedregalo.com"],  # Or specify your Shopify domain: ["https://yourshop.myshopify.com"]
@@ -88,8 +91,6 @@ def get_gift_suggestions(age, relationship, hobbies, budget, urgency, gift_type,
         "suggestions": gift_data
     }
 
-# FastAPI setup
-app = FastAPI()
 
 class GiftRequest(BaseModel):
     age: str
