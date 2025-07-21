@@ -78,9 +78,17 @@ def get_gift_suggestions(age, relationship, hobbies, budget, urgency, gift_type,
     gift_data = []
     for doc in results:
         meta = doc.metadata
+        price = meta.get("price", "N/A")
+        # Append ' PHP' if price is a number or numeric string
+        if isinstance(price, (int, float)):
+            price_str = f"{price} PHP"
+        elif isinstance(price, str) and price.replace('.', '', 1).isdigit():
+            price_str = f"{price} PHP"
+        else:
+            price_str = price
         gift_data.append({
             "title": meta.get("title", "Unknown"),
-            "price": meta.get("price", "N/A"),
+            "price": price_str,
             "url": meta.get("product_url", "N/A"),
             "image_url": meta.get("image_url", "")
         })
