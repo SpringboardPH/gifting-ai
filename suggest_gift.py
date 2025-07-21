@@ -60,7 +60,6 @@ def get_llm_refined_query(prompt):
         "You are a helpful assistant for a gift recommendation system. "
         "Your first priority is to generate a search query that will retrieve products most closely related to the user's hobbies and interests. "
         "Given the following user profile and gift requirements, generate a concise, specific search query that would best match a product in a gift database. "
-        "If the user's hobbies or gift type are related to pets, animals, or pet ownership, prioritize pet-related keywords and concepts in your search query. "
         "Otherwise, focus on keywords and phrases that would help retrieve the most relevant gift for the user's context. "
         "The search query should be suitable for semantic search in a product vector database. "
         "Be as specific as possible, and include relevant product types, recipient interests, and any constraints such as budget or urgency."
@@ -81,9 +80,9 @@ def get_gift_suggestions(age, relationship, hobbies, budget, urgency, gift_type,
         meta = doc.metadata
         gift_data.append({
             "title": meta.get("title", "Unknown"),
-            "description": meta.get("description", ""),
             "price": meta.get("price", "N/A"),
-            "url": meta.get("product_url", "N/A")
+            "url": meta.get("product_url", "N/A"),
+            "image_url": meta.get("image_url", "")
         })
     return {
         "original_prompt": user_prompt,

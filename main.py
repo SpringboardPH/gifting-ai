@@ -12,7 +12,7 @@ load_dotenv()
 SUPABASE_URL = os.environ.get('SUPABASE_URL')
 SUPABASE_SERVICE_ROLE_KEY = os.environ.get('SUPABASE_SERVICE_ROLE_KEY')
 GEMINI_API_KEY = os.environ.get('GEMINI_API_KEY')
-PRODUCTS_JSON_FILE = "gemini_products_clean_updated.json"
+PRODUCTS_JSON_FILE = "speed_regalo.json"
 
 # Initialize Supabase client
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY)
