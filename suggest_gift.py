@@ -116,6 +116,6 @@ def suggest_gift(request: GiftRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-@app.post('/')
+@app.get('/')
 def index():
-    return {"message": "Hello World"}  
+    return {"message": "Hello World"}
